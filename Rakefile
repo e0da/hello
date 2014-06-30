@@ -18,8 +18,8 @@ def open_command
   end
 end
 
-desc 'Compile the script and run the server'
-task default: [ :compile, :server ]
+desc 'Compile the script; run the server; and open it in a browser'
+task default: [ :compile, :open, :server ]
 
 desc 'Compile the script'
 task :compile do
@@ -33,13 +33,22 @@ task :compile do
   )
 end
 
+desc '(Try to) open it in a browser'
+task :open do
+  system "( sleep 1 ; #{open_command} #{URL} ) &"
+end
+
 desc 'Run the server'
 task :server do
   warn BANNER
-  system "( sleep 1 ; #{open_command} #{URL} ) & ruby hello.rb"
+  system 'ruby hello.rb'
 end
 
 desc 'Remove generated files'
 task :clean do
-  rm 'hello.rb'
+  begin
+    rm 'hello.rb'
+  rescue Errno::ENOENT
+    # Don't care
+  end
 end
