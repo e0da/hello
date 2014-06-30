@@ -3,8 +3,8 @@ hello
 
 A contrived [hello world][wikipedia-hello-world] in Ruby.
 
-Compile and Run
----------------
+Compile; Run; See
+-----------------
 
     rake
 
@@ -15,6 +15,10 @@ Compile and Run
 ### Just Run
 
     rake server
+
+### Just See
+
+    rake open
 
 Other Tasks
 -----------
