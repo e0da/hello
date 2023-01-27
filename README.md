@@ -1,30 +1,17 @@
-hello
-=====
+# Set up your environment on Mac
 
-A contrived [hello world][wikipedia-hello-world] in Ruby.
+Clone the repository, navigate to the directory, install the dependencies with
+[Homebrew][], and run the app.
 
-Compilation
------------
+[homebrew]: https://brew.sh/
 
-    rake compile
+```sh
+git clone https://github.com/e0da/hello
+cd hello
+brew install node
+npm run start
+```
 
-Execution
----------
-
-    rake hello.rb
-
-Demo
-----
-
-    rake
-
-Which is equivalent to
-
-    rake compile server open
-
-Other Tasks
------------
-
-    rake -T
-
-[wikipedia-hello-world]:http://en.wikipedia.org/wiki/Hello_world_program
+You'll get a message in your terminal showing the URL where your app can be
+found running locally from your computer (don't worry, it's not visible to the
+Internet). Open the URL in your browser and you should see the app running.
